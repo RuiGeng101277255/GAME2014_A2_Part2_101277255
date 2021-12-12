@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842400497183180255}
   - component: {fileID: 1842400497183180252}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: bg-clouds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842400497631180052}
   - component: {fileID: 1842400497631180055}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 1842400497631180053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 144, y: 144, z: 144}
   m_Children:
   - {fileID: 1842400497183180255}
   - {fileID: 1842400498135725245}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842400497631180053}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 319516b350062414d9713c937bbd7090, type: 3}
   m_Name: 
@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842400498135725245}
   - component: {fileID: 1842400498135725244}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: bg-clouds (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1842400498619914709}
   - component: {fileID: 1842400498619914708}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: bg-clouds (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
