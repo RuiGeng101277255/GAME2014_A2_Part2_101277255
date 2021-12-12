@@ -10,12 +10,15 @@ public class SpecialPlatformBehaviour : MonoBehaviour
     Rigidbody2D platformRB;
     Animator platformAnim;
 
+    Vector2 spawnPosition;
+
     bool hasPlayerLanded = false;
     bool isExploding = false;
 
     void Start()
     {
         platformRB = GetComponent<Rigidbody2D>();
+        spawnPosition = platformRB.position;
 
         if (PlatformType == SpecialPlatformType.EXPLODING)
         {
@@ -61,7 +64,7 @@ public class SpecialPlatformBehaviour : MonoBehaviour
                 {
                     if ((platformAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f) && (platformAnim.GetCurrentAnimatorStateInfo(0).IsName("ExplosionAnimation")))
                     {
-                        Destroy(gameObject);
+                        gameObject.SetActive(false);
                     }
                 }
                 break;
@@ -79,6 +82,15 @@ public class SpecialPlatformBehaviour : MonoBehaviour
                 collision.gameObject.GetComponent<PlayerScript>().RespawnPlayer();
             }
         }
+    }
+
+    public void resetPlatform()
+    {
+        platformRB.position = spawnPosition;
+        platformRB.constraints = RigidbodyConstraints2D.FreezeAll;
+        hasPlayerLanded = false;
+        isExploding = false;
+        gameObject.SetActive(false);
     }
 }
 

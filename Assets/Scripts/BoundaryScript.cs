@@ -12,7 +12,10 @@ public class BoundaryScript : MonoBehaviour
         }
         else
         {
-            Destroy(collision.gameObject);
+            if (collision.gameObject.GetComponent<SpecialPlatformBehaviour>() != null)
+            {
+                collision.gameObject.GetComponent<SpecialPlatformBehaviour>().resetPlatform();
+            }
         }
     }
 }

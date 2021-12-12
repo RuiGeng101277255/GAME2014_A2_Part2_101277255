@@ -241,6 +241,13 @@ public class PlayerScript : MonoBehaviour
     {
         PlayerLive--;
         playerRB.position = spawnPoint;
+
+        SpecialPlatformBehaviour[] allSpecialPlatforms = FindObjectsOfType<SpecialPlatformBehaviour>();
+
+        foreach(SpecialPlatformBehaviour sp in allSpecialPlatforms)
+        {
+            sp.gameObject.SetActive(true);
+        }
     }
 }
 
