@@ -45,12 +45,19 @@ public class PlayerScript : MonoBehaviour
     [Header("SFX")]
     public AudioSource jumpSFX;
 
+    [Header("Spawnpoint")]
+    public Vector2 spawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
         playerSprite = GetComponent<SpriteRenderer>();
+
+        spawnPoint = playerRB.position;
+
+        checkWeaponDisplay();
     }
 
     // Update is called once per frame
@@ -228,6 +235,12 @@ public class PlayerScript : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(groundLevel.position, groundRadius);
+    }
+
+    public void RespawnPlayer()
+    {
+        PlayerLive--;
+        playerRB.position = spawnPoint;
     }
 }
 
