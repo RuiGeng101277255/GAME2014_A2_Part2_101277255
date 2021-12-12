@@ -29,6 +29,8 @@ public class EnemyController : MonoBehaviour
 
     public bool isFrog;
 
+    public int EnemyWorth;
+
     // Start is called before the first frame update
     void Start()
     {

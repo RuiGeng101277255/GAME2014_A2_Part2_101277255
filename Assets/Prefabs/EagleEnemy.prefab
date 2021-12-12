@@ -409,6 +409,8 @@ MonoBehaviour:
   bulletSpawn: {fileID: 7478503407551663287}
   fireDelay: 20
   player: {fileID: 0}
+  isFrog: 0
+  EnemyWorth: 100
 --- !u!1 &4712367541516968545
 GameObject:
   m_ObjectHideFlags: 0

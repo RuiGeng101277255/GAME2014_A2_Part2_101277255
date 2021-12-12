@@ -47,4 +47,22 @@ public class BulletController : MonoBehaviour
         }
         
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == 1)
+        {
+            if (collision.gameObject.GetComponent<EnemyController>() != null)
+            {
+                PlayerScript player = FindObjectOfType<PlayerScript>();
+                player.PlayerScore += collision.gameObject.GetComponent<EnemyController>().EnemyWorth;
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
+        }
+        else if (collision.gameObject.layer == 3)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

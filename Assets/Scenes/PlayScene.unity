@@ -20736,26 +20736,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 18902666443580200, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4188977692641460963, guid: c842229a050ce154199acebadfa237b0, type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 397637278}
-    - target: {fileID: 4188977692641460963, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: verticalForce
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188977692641460963, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: horizontalForce
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188977692641460963, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: airControlFactor
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 4188977692641460964, guid: c842229a050ce154199acebadfa237b0, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -20799,10 +20783,6 @@ PrefabInstance:
     - target: {fileID: 4188977692641460964, guid: c842229a050ce154199acebadfa237b0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188977692641460965, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: m_GravityScale
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4188977692641460966, guid: c842229a050ce154199acebadfa237b0, type: 3}
       propertyPath: m_Name

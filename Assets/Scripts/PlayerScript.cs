@@ -48,6 +48,10 @@ public class PlayerScript : MonoBehaviour
     [Header("Spawnpoint")]
     public Vector2 spawnPoint;
 
+    [Header("Bullet")]
+    public GameObject bulletPrefab;
+    public Transform bulletSpawnPos;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -170,7 +174,7 @@ public class PlayerScript : MonoBehaviour
                 }
                 else
                 {
-
+                    fireBullet();
                 }
 
                 hasJustAttacked = true;
@@ -189,6 +193,13 @@ public class PlayerScript : MonoBehaviour
                     hasJustAttacked = false;
                 }
             }
+            else
+            {
+                if (!UIButtonBehaviour.ShootButtonDown)
+                {
+                    hasJustAttacked = false;
+                }
+            }
         }
 
         //else
@@ -197,6 +208,16 @@ public class PlayerScript : MonoBehaviour
         //    SwordObject.SetActive(false);
         //    hasJustAttacked = false;
         //}
+    }
+
+    private void fireBullet()
+    {
+        if (AmmmoCount > 0)
+        {
+            var temp_bullet = Instantiate(bulletPrefab, bulletSpawnPos.position, Quaternion.identity);
+            temp_bullet.GetComponent<BulletController>().direction = Vector3.Normalize(new Vector3(transform.localScale.x, 0.0f, 0.0f));
+            AmmmoCount--;
+        }
     }
 
     private void checkChangeWeapon()

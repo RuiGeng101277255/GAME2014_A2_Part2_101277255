@@ -100,7 +100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6336107570399168493
 Transform:
   m_ObjectHideFlags: 0
@@ -187,6 +187,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &626891919331798634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8763472205565796722}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8763472205565796722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626891919331798634}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5789067911354409054}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1355772338808068222
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5789067911354409054
 Transform:
   m_ObjectHideFlags: 0
@@ -216,6 +246,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1837971157239917949}
+  - {fileID: 8763472205565796722}
   m_Father: {fileID: 2873228410580244672}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -475,7 +506,7 @@ Rigidbody2D:
   m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -517,9 +548,9 @@ MonoBehaviour:
   AmmmoCount: 20
   PlayerScore: 0
   PlayerLive: 4
-  horizontalForce: 50
+  horizontalForce: 25
   verticalForce: 50
-  airControlFactor: 0.5
+  airControlFactor: 0.25
   grounded: 0
   groundLevel: {fileID: 5789477032426503674}
   groundRadius: 0.25
@@ -530,6 +561,9 @@ MonoBehaviour:
   RifleObject: {fileID: 1355772338808068222}
   isSword: 0
   jumpSFX: {fileID: 0}
+  spawnPoint: {x: 0, y: 0}
+  bulletPrefab: {fileID: 8755515894442637205, guid: 0c99f552ad398484fbef0e301d197938, type: 3}
+  bulletSpawnPos: {fileID: 8763472205565796722}
 --- !u!1 &4208095741215794675
 GameObject:
   m_ObjectHideFlags: 0

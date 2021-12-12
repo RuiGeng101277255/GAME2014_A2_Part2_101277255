@@ -410,6 +410,7 @@ MonoBehaviour:
   fireDelay: 20
   player: {fileID: 0}
   isFrog: 1
+  EnemyWorth: 75
 --- !u!1 &4712367541516968545
 GameObject:
   m_ObjectHideFlags: 0
