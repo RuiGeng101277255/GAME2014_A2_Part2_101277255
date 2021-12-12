@@ -8,12 +8,19 @@ public class SpecialPlatformBehaviour : MonoBehaviour
     public float CountDownTimer;
 
     Rigidbody2D platformRB;
+    Animator platformAnim;
 
     bool hasPlayerLanded = false;
+    bool isExploding = false;
 
     void Start()
     {
         platformRB = GetComponent<Rigidbody2D>();
+
+        if (PlatformType == SpecialPlatformType.EXPLODING)
+        {
+            platformAnim = GetComponent<Animator>();
+        }
     }
 
     // Update is called once per frame
@@ -45,6 +52,18 @@ public class SpecialPlatformBehaviour : MonoBehaviour
                 platformRB.constraints = RigidbodyConstraints2D.None;
                 break;
             case SpecialPlatformType.EXPLODING:
+                if (!isExploding)
+                {
+                    platformAnim.SetTrigger("Explode");
+                    isExploding = true;
+                }
+                else
+                {
+                    if ((platformAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f) && (platformAnim.GetCurrentAnimatorStateInfo(0).IsName("ExplosionAnimation")))
+                    {
+                        Destroy(gameObject);
+                    }
+                }
                 break;
         }
     }
@@ -54,6 +73,11 @@ public class SpecialPlatformBehaviour : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerScript>() != null)
         {
             hasPlayerLanded = true;
+
+            if (isExploding)
+            {
+                collision.gameObject.GetComponent<PlayerScript>().RespawnPlayer();
+            }
         }
     }
 }
