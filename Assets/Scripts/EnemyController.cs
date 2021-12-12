@@ -23,9 +23,11 @@ public class EnemyController : MonoBehaviour
     public float fireDelay;
     public GameObject player;
     //public GameObject bulletPrefab;
-    public AudioSource spitSound;
+    //public AudioSource spitSound;
 
     private Rigidbody2D rigidbody;
+
+    public bool isFrog;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,7 @@ public class EnemyController : MonoBehaviour
         enemyLOS = GetComponent<LOS>();
         animatorController = GetComponent<Animator>();
         player = GameObject.FindObjectOfType<PlayerScript>().gameObject;
-        spitSound = GetComponent<AudioSource>();
+        //spitSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -111,6 +113,11 @@ public class EnemyController : MonoBehaviour
         {
             rigidbody.AddForce(Vector2.left * runForce * transform.localScale.x);
             rigidbody.velocity *= 0.90f;
+
+            if (isFrog)
+            {
+                animatorController.SetBool("isJumping", true);
+            }
         }
         else
         {

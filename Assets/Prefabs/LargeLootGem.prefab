@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1696666212203311516}
   - component: {fileID: 1696666212203311517}
   - component: {fileID: -1160042357750839152}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LargeLootGem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

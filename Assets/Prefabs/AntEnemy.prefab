@@ -70,13 +70,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8765791281167009598}
   - component: {fileID: 2739587938821904486}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: EnemyMarker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8765791281167009598
 Transform:
   m_ObjectHideFlags: 0
@@ -160,8 +160,8 @@ GameObject:
   - component: {fileID: -7519853742516034854}
   - component: {fileID: 1735762397395026333}
   - component: {fileID: 5653551386034058111}
-  m_Layer: 12
-  m_Name: Enemy
+  m_Layer: 0
+  m_Name: AntEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,7 +226,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: baa0c643131554ff99574059ec7da1cc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 598dddb46df224677a143c1f0fb9fdc7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -247,7 +247,7 @@ Animator:
   m_GameObject: {fileID: 3347542983166984659}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c3b842df0895602479d1b47847cb0588, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -294,7 +294,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.25, y: 1.75}
+    oldSize: {x: 2.3125, y: 1.9375}
     newSize: {x: 2.25, y: 1.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -343,7 +343,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.25, y: 1.75}
+    oldSize: {x: 2.3125, y: 1.9375}
     newSize: {x: 2.25, y: 1.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -376,7 +376,7 @@ MonoBehaviour:
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 137
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLOS: {fileID: 0}
-  runForce: 5
+  runForce: 10
   lookAheadPoint: {fileID: 717407477}
   lookInFrontPoint: {fileID: 1383857782}
   groundLayerMask:
@@ -403,13 +403,12 @@ MonoBehaviour:
     m_Bits: 8
   wallLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   isGroundAhead: 0
   animatorController: {fileID: 0}
   bulletSpawn: {fileID: 7478503407551663287}
   fireDelay: 20
   player: {fileID: 0}
-  spitSound: {fileID: 0}
 --- !u!1 &4712367541516968545
 GameObject:
   m_ObjectHideFlags: 0
@@ -419,7 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7478503407551663287}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}

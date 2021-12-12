@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 304492665968996042}
   - component: {fileID: 304492665968996085}
   - component: {fileID: -7704188326493497727}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AmmoChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
