@@ -16,6 +16,11 @@ public class PlayerScript : MonoBehaviour
     public Joystick joystick;
     public float sensitivity;
 
+    [Header("Player Info")]
+    public int AmmmoCount;
+    public int PlayerScore;
+    public int PlayerLive;
+
     [Header("Movement & Grounding")]
     Rigidbody2D playerRB;
     Animator playerAnim;
@@ -30,6 +35,7 @@ public class PlayerScript : MonoBehaviour
     public float groundRadius;
     public LayerMask groundLayerMask;
 
+    [Header("SFX")]
     public AudioSource jumpSFX;
 
     // Start is called before the first frame update
