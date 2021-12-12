@@ -356,7 +356,6 @@ RectTransform:
   m_Children:
   - {fileID: 1497162847}
   - {fileID: 622438646}
-  - {fileID: 863418261}
   m_Father: {fileID: 822469563}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -441,7 +440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 191929894}
   - component: {fileID: 191929893}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: desert_46
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +522,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 366932035}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: FallablePlatforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -651,7 +650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 621328422}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: SlipperyPlatforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 646783724}
   - component: {fileID: 646783723}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: desert_34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -812,7 +811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775733485}
   - component: {fileID: 775733484}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: tileset-sliced_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1200,11 +1199,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 128374641}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1842400497631180052, guid: 531fd2d51ced49b40beeb28d6b1ce61c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1842400497631180052, guid: 531fd2d51ced49b40beeb28d6b1ce61c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1224,15 +1223,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1842400497631180052, guid: 531fd2d51ced49b40beeb28d6b1ce61c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1842400497631180052, guid: 531fd2d51ced49b40beeb28d6b1ce61c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1842400497631180052, guid: 531fd2d51ced49b40beeb28d6b1ce61c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1842400497631180052, guid: 531fd2d51ced49b40beeb28d6b1ce61c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1252,11 +1251,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 531fd2d51ced49b40beeb28d6b1ce61c, type: 3}
---- !u!4 &863418261 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1842400497631180052, guid: 531fd2d51ced49b40beeb28d6b1ce61c, type: 3}
-  m_PrefabInstance: {fileID: 863418260}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &874027089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,7 +1265,7 @@ GameObject:
   - component: {fileID: 874027095}
   - component: {fileID: 874027094}
   - component: {fileID: 874027093}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: SolidGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1759,7 +1753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1056457050}
   - component: {fileID: 1056457049}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: desert_35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1877,7 +1871,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1160758757}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: ExplodingPlatforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2258,7 +2252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1281675279}
   - component: {fileID: 1281675278}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: desert_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2508,7 +2502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1376035845}
   - component: {fileID: 1376035844}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: tileset-sliced_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2748,7 +2742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1472435249}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: MovingPlatforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2998,7 +2992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620815628}
   - component: {fileID: 1620815627}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: desert_11 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3081,7 +3075,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1661476910}
   - component: {fileID: 1661476909}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3108,7 +3102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661476908}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.157476, y: -9.375874, z: 0}
+  m_LocalPosition: {x: 3.157476, y: -9.375874, z: 1.3311374}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 874027090}
@@ -3240,7 +3234,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1775171444
 GameObject:
@@ -3252,7 +3246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1775171445}
   - component: {fileID: 1775171446}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: desert_35 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3366,7 +3360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1807501499}
   - component: {fileID: 1807501498}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: desert_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3449,7 +3443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877080200}
   - component: {fileID: 1877080199}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: desert_10 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3609,7 +3603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1988189827}
   - component: {fileID: 1988189826}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: tileset-sliced_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3813,7 +3807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2089483452}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: GroundNPlatforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3828,7 +3822,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089483451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.157476, y: 9.375874, z: 1}
+  m_LocalPosition: {x: -3.157476, y: 9.375874, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1661476910}
@@ -3837,7 +3831,7 @@ Transform:
   - {fileID: 621328422}
   - {fileID: 1160758757}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2108512001
 GameObject:
@@ -3949,7 +3943,7 @@ Transform:
   - {fileID: 798751254}
   - {fileID: 2025154089}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2112711026
 MonoBehaviour:
@@ -3985,7 +3979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2119980416}
   - component: {fileID: 2119980415}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: desert_47
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4065,37 +4059,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 805519965, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 805519968, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 4294967263
-      objectReference: {fileID: 0}
     - target: {fileID: 18902666443580200, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1355772338808068222, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1838320774829246326, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: m_Layer
-      value: 7
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4188977692641460963, guid: c842229a050ce154199acebadfa237b0, type: 3}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 397637278}
-    - target: {fileID: 4188977692641460963, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: groundLayerMask.m_Bits
-      value: 72
-      objectReference: {fileID: 0}
     - target: {fileID: 4188977692641460964, guid: c842229a050ce154199acebadfa237b0, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4188977692641460964, guid: c842229a050ce154199acebadfa237b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4107,7 +4081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4188977692641460964, guid: c842229a050ce154199acebadfa237b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4188977692641460964, guid: c842229a050ce154199acebadfa237b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4140,22 +4114,6 @@ PrefabInstance:
     - target: {fileID: 4188977692641460966, guid: c842229a050ce154199acebadfa237b0, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4188977692641460966, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4208095741215794675, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5441878427569058704, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8720115353531362905, guid: c842229a050ce154199acebadfa237b0, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c842229a050ce154199acebadfa237b0, type: 3}
