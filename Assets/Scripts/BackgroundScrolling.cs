@@ -12,15 +12,16 @@ using UnityEngine;
 
 public class BackgroundScrolling : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public PlayerScript Player;
 
     // Update is called once per frame
     void Update()
     {
-        
+        setBackgroundPosition();
+    }
+
+    void setBackgroundPosition()
+    {
+        transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 2, transform.position.z);
     }
 }
