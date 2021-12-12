@@ -27,6 +27,7 @@ public class GameManagerScript : MonoBehaviour
         updateIcon();
         updateText();
         updatePlayerLives();
+        checkGameStatus();
     }
 
     void updateIcon()
@@ -40,6 +41,18 @@ public class GameManagerScript : MonoBehaviour
         {
             SwordIcon.SetActive(false);
             AmmoIcon.SetActive(true);
+        }
+    }
+
+    void checkGameStatus()
+    {
+        if (TotalTimeLeft <= 0.0f)
+        {
+            if (Player.PlayerLive > 0)
+            {
+                GameOverResult.Instance().setResultStats(Player.PlayerScore, true);
+                ScenePanelChange.Instance().openScene("EndScene");
+            }
         }
     }
 

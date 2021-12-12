@@ -146,17 +146,23 @@ public class EnemyController : MonoBehaviour
 
     // EVENTS
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Platform"))
         {
-            transform.SetParent(other.transform);
+            transform.SetParent(collision.transform);
         }
+
+        if (collision.gameObject.GetComponent<PlayerScript>() != null)
+        {
+            collision.gameObject.GetComponent<PlayerScript>().RespawnPlayer();
+        }
+            
     }
 
-    private void OnCollisionExit2D(Collision2D other)
+    private void OnCollisionExit2D(Collision2D collision)
     {
-        if (other.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Platform"))
         {
             transform.SetParent(null);
         }

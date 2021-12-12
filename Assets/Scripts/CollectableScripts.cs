@@ -18,7 +18,10 @@ public class CollectableScripts : MonoBehaviour
 
             if (isHealthPotion)
             {
-                collision.gameObject.GetComponent<PlayerScript>().PlayerLive++;
+                if (collision.gameObject.GetComponent<PlayerScript>().PlayerLive < 4)
+                {
+                    collision.gameObject.GetComponent<PlayerScript>().PlayerLive++;
+                }
             }
 
             gameObject.SetActive(false);

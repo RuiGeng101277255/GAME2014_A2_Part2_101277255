@@ -13,6 +13,17 @@ using UnityEngine.SceneManagement;
 
 public class ScenePanelChange : MonoBehaviour
 {
+    private static ScenePanelChange _Instance;
+
+    public static ScenePanelChange Instance()
+    {
+        if (_Instance == null)
+        {
+            _Instance = new ScenePanelChange();
+        }
+
+        return _Instance;
+    }
     // Start is called before the first frame update
     void Start()
     {

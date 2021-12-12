@@ -72,6 +72,7 @@ public class PlayerScript : MonoBehaviour
         CheckIfGrounded();
         checkChangeWeapon();
         Attack();
+        CheckIfGameOver();
     }
 
     private void Move()
@@ -216,6 +217,15 @@ public class PlayerScript : MonoBehaviour
         //    SwordObject.SetActive(false);
         //    hasJustAttacked = false;
         //}
+    }
+
+    private void CheckIfGameOver()
+    {
+        if (PlayerLive <= 0)
+        {
+            GameOverResult.Instance().setResultStats(PlayerScore, false);
+            ScenePanelChange.Instance().openScene("EndScene");
+        }
     }
 
     private void fireBullet()

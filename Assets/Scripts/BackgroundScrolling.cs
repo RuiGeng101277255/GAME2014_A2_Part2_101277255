@@ -22,6 +22,9 @@ public class BackgroundScrolling : MonoBehaviour
 
     void setBackgroundPosition()
     {
-        transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 2, transform.position.z);
+        if (Player != null)
+        {
+            transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 2, transform.position.z);
+        }
     }
 }
