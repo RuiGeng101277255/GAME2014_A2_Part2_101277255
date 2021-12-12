@@ -24,5 +24,6 @@ public enum LootType
     SMALL_GEM,
     LARGE_GEM,
     AMMO_CHEST,
-    HEALTH_POTION
+    HEALTH_POTION,
+    NUM_OF_LOOT
 }
