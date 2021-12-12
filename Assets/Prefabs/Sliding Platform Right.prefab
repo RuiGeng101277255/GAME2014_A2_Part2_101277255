@@ -525,7 +525,7 @@ Transform:
   m_GameObject: {fileID: 2629391781977157204}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -25, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children:
   - {fileID: 317031604043692151}
   - {fileID: 2387272720277389567}
@@ -585,7 +585,7 @@ SurfaceEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294955455
-  m_Speed: 10
+  m_Speed: 25
   m_SpeedVariation: 0
   m_ForceScale: 0.1
   m_UseContactForce: 0
