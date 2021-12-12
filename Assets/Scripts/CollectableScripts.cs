@@ -5,17 +5,24 @@ using UnityEngine;
 public class CollectableScripts : MonoBehaviour
 {
     public LootType Type;
+    public int ScoreValue;
+    public int AmmoCount;
+    public bool isHealthPotion;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
+        if (collision.gameObject.GetComponent<PlayerScript>() != null)
+        {
+            collision.gameObject.GetComponent<PlayerScript>().PlayerScore += ScoreValue;
+            collision.gameObject.GetComponent<PlayerScript>().AmmmoCount += AmmoCount;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            if (isHealthPotion)
+            {
+                collision.gameObject.GetComponent<PlayerScript>().PlayerLive++;
+            }
+
+            gameObject.SetActive(false);
+        }
     }
 }
 

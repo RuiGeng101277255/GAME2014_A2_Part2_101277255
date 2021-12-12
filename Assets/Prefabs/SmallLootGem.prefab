@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 0
+  ScoreValue: 100
+  AmmoCount: 0
+  isHealthPotion: 0
 --- !u!70 &6167792920887956511
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

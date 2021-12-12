@@ -99,6 +99,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 2
+  ScoreValue: 50
+  AmmoCount: 10
+  isHealthPotion: 0
 --- !u!61 &304492665968996085
 BoxCollider2D:
   m_ObjectHideFlags: 0
