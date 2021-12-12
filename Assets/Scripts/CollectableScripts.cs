@@ -13,6 +13,7 @@ public class CollectableScripts : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerScript>() != null)
         {
+            FindSFX();
             collision.gameObject.GetComponent<PlayerScript>().PlayerScore += ScoreValue;
             collision.gameObject.GetComponent<PlayerScript>().AmmmoCount += AmmoCount;
 
@@ -26,6 +27,29 @@ public class CollectableScripts : MonoBehaviour
 
             gameObject.SetActive(false);
         }
+    }
+
+    private void FindSFX()
+    {
+        AudioSource LootSFX = new AudioSource();
+
+        switch (Type)
+        {
+            case LootType.SMALL_GEM:
+                LootSFX = GameObject.Find("CoinCollectSFX").GetComponent<AudioSource>();
+                break;
+            case LootType.LARGE_GEM:
+                LootSFX = GameObject.Find("CoinCollectSFX").GetComponent<AudioSource>();
+                break;
+            case LootType.AMMO_CHEST:
+                LootSFX = GameObject.Find("AmmoCollectSFX").GetComponent<AudioSource>();
+                break;
+            case LootType.HEALTH_POTION:
+                LootSFX = GameObject.Find("HealthCollectSFX").GetComponent<AudioSource>();
+                break;
+        }
+
+        LootSFX.Play();
     }
 }
 

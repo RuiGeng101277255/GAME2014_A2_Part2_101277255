@@ -47,6 +47,9 @@ public class PlayerScript : MonoBehaviour
 
     [Header("SFX")]
     public AudioSource jumpSFX;
+    public AudioSource shootSFX;
+    public AudioSource swordSFX;
+    bool jumpSFXPlayed = true;
 
     [Header("Spawnpoint")]
     public Vector2 spawnPoint;
@@ -141,6 +144,14 @@ public class PlayerScript : MonoBehaviour
             //state = PlayerAnimationState.JUMP;
 
             playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.JUMP);
+            if (!jumpSFX.isPlaying)
+            {
+                if (!jumpSFXPlayed)
+                {
+                    jumpSFX.Play();
+                    jumpSFXPlayed = true;
+                }
+            }
 
             if (x != 0)
             {
@@ -160,6 +171,11 @@ public class PlayerScript : MonoBehaviour
         RaycastHit2D hit = Physics2D.CircleCast(groundLevel.position, groundRadius, Vector2.down, groundRadius, groundLayerMask);
 
         grounded = (hit) ? true : false;
+
+        if (grounded)
+        {
+            jumpSFXPlayed = false;
+        }
     }
 
     private void Attack()
@@ -180,10 +196,12 @@ public class PlayerScript : MonoBehaviour
                     SwordWeaponObject.GetComponent<Animator>().SetTrigger("swing");
                     //playerAnim.SetTrigger("SwordAttack");
                     playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.SWORD);
+                    swordSFX.Play();
                 }
                 else
                 {
                     fireBullet();
+                    shootSFX.Play();
                 }
 
                 hasJustAttacked = true;

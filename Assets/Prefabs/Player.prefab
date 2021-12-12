@@ -557,12 +557,15 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 8
+  isMoving: 0
   SwordObject: {fileID: 18902666443580200}
   SwordWeaponObject: {fileID: 5441878427569058704}
   RifleObject: {fileID: 1355772338808068222}
   isSword: 0
   hasJustAttacked: 0
-  jumpSFX: {fileID: 0}
+  jumpSFX: {fileID: 2718302259926941625, guid: aa25de6f61a01874b940438898d8561c, type: 3}
+  shootSFX: {fileID: 2166163511837672808, guid: 65c12adcd0d5c6c4ab183907097cde09, type: 3}
+  swordSFX: {fileID: 3321412400825066607, guid: eb6f41d2b684c7b4ca46f30ab66c8fc3, type: 3}
   spawnPoint: {x: 0, y: 0}
   bulletPrefab: {fileID: 8755515894442637205, guid: 0c99f552ad398484fbef0e301d197938, type: 3}
   bulletSpawnPos: {fileID: 8763472205565796722}

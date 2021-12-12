@@ -57,6 +57,7 @@ public class SpecialPlatformBehaviour : MonoBehaviour
             case SpecialPlatformType.EXPLODING:
                 if (!isExploding)
                 {
+                    GameObject.Find("PlatformExplosionSFX").GetComponent<AudioSource>().Play();
                     platformAnim.SetTrigger("Explode");
                     isExploding = true;
                 }
