@@ -61,7 +61,7 @@ public class PlayerScript : MonoBehaviour
         {
             // Keyboard Input
             float y = (Input.GetAxisRaw("Vertical") + joystick.Vertical) * sensitivity;
-            float jump = Input.GetAxisRaw("Jump") + ((jumpButtonDown) ? 1.0f : 0.0f);
+            float jump = Input.GetAxisRaw("Jump") + ((UIButtonBehaviour.JumpButtonDown) ? 1.0f : 0.0f);
 
             // jump activated
             if (jump > 0)
