@@ -1,3 +1,11 @@
+/*
+ Full Name: Rui Chen Geng Li (101277255)
+ File Name: GameManagerScript.cs
+ Last Modified: December 12th, 2021
+ Description: Game Manager for the play scene, updates the UI and checks for player's win state (lose state in playerscript)
+ Version History: v1.03 Full Implementation and Internal Documentation
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

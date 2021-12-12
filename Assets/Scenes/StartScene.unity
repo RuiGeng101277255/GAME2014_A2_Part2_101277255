@@ -3395,6 +3395,8 @@ MonoBehaviour:
   isSword: 0
   hasJustAttacked: 0
   jumpSFX: {fileID: 0}
+  shootSFX: {fileID: 0}
+  swordSFX: {fileID: 0}
   spawnPoint: {x: 0, y: 0}
   bulletPrefab: {fileID: 0}
   bulletSpawnPos: {fileID: 0}

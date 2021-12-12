@@ -1,9 +1,9 @@
 /*
  Full Name: Rui Chen Geng Li (101277255)
  File Name: PlayerScript.cs
- Last Modified: November 21st, 2021
+ Last Modified: December 12th, 2021
  Description: Defines the player's behaviour
- Version History: v1.01 Initial blank script and internal documentation
+ Version History: v1.15 Full Player Functionality (Attack, Animation, Movement, Collision) and SFX Implementation
  */
 
 using System.Collections;
@@ -103,30 +103,15 @@ public class PlayerScript : MonoBehaviour
             float y = (Input.GetAxisRaw("Vertical") + joystick.Vertical) * sensitivity;
             float jump = Input.GetAxisRaw("Jump") + ((UIButtonBehaviour.JumpButtonDown) ? 1.0f : 0.0f);
 
-            // jump activated
-            if (jump > 0)
-            {
-                //jumpSFX.Play();
-            }
-
-            // Check for Flip
-            
-
             if (x != 0)
             {
                 playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.RUN);
                 isMoving = true;
-                //x = FlipAnimation(x);
-                //animatorController.SetInteger("AnimationState", (int)PlayerAnimationState.RUN); // RUN State
-                //state = PlayerAnimationState.RUN;
-                //CreateDustTrail();
             }
             else
             {
                 playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.IDLE);
                 isMoving = false;
-                //animatorController.SetInteger("AnimationState", (int)PlayerAnimationState.IDLE); // IDLE State
-                //state = PlayerAnimationState.IDLE;
             }
 
             float horizontalMoveForce = x * horizontalForce;
@@ -136,12 +121,10 @@ public class PlayerScript : MonoBehaviour
 
 
             playerRB.AddForce(new Vector2(horizontalMoveForce, jumpMoveForce) * mass);
-            playerRB.velocity *= 0.9f; // scaling / stopping hack
+            playerRB.velocity *= 0.9f;
         }
-        else // Air Control
+        else
         {
-            //animatorController.SetInteger("AnimationState", (int)PlayerAnimationState.JUMP); // JUMP State
-            //state = PlayerAnimationState.JUMP;
 
             playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.JUMP);
             if (!jumpSFX.isPlaying)
@@ -155,11 +138,8 @@ public class PlayerScript : MonoBehaviour
 
             if (x != 0)
             {
-                //x = FlipAnimation(x);
-                //
                 float horizontalMoveForce = x * horizontalForce * airControlFactor;
                 float mass = playerRB.mass * playerRB.gravityScale;
-                //
                 isMoving = true;
                 playerRB.AddForce(new Vector2(horizontalMoveForce, 0.0f) * mass);
             }
@@ -180,11 +160,8 @@ public class PlayerScript : MonoBehaviour
 
     private void Attack()
     {
-
-
         if ((UIButtonBehaviour.ShootButtonDown) || (Input.GetKeyDown(KeyCode.J)))
         {
-            //Debug.Log(playerAnim.GetCurrentAnimatorStateInfo(0).IsName("Movement"));
 
             if (!hasJustAttacked)
             {
@@ -194,7 +171,6 @@ public class PlayerScript : MonoBehaviour
                     SwordObject.SetActive(true);
                     SwordObject.GetComponent<Animator>().SetTrigger("swing");
                     SwordWeaponObject.GetComponent<Animator>().SetTrigger("swing");
-                    //playerAnim.SetTrigger("SwordAttack");
                     playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.SWORD);
                     swordSFX.Play();
                 }
@@ -214,32 +190,7 @@ public class PlayerScript : MonoBehaviour
             {
                 hasJustAttacked = false;
             }
-            //if (isSword)
-            //{
-            //    if ((playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f) && (playerAnim.GetCurrentAnimatorStateInfo(0).IsName("sword_side")))
-            //    {
-            //        Debug.Log("ljadfljkfdsf");
-            //        //playerAnim.SetInteger("Action", (int)PlayerAttackAction.NONE);
-            //        //playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.NONE);
-            //        //SwordObject.SetActive(false);
-            //        hasJustAttacked = false;
-            //    }
-            //}
-            //else
-            //{
-            //    if (!UIButtonBehaviour.ShootButtonDown)
-            //    {
-            //        hasJustAttacked = false;
-            //    }
-            //}
         }
-
-        //else
-        //{
-        //    playerAnim.SetInteger("Action", (int)PlayerAttackAction.NONE);
-        //    SwordObject.SetActive(false);
-        //    hasJustAttacked = false;
-        //}
     }
 
     private void CheckIfGameOver()

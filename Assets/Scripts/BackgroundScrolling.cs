@@ -1,9 +1,9 @@
 /*
  Full Name: Rui Chen Geng Li (101277255)
  File Name: BackgroundScrolling.cs
- Last Modified: November 21st, 2021
- Description: Scrolling the scroll of cloud background
- Version History: v1.01 Initial blank script and internal documentation
+ Last Modified: December 12th, 2021
+ Description: Cloud Background moves based on the player's position
+ Version History: v1.02 Altered the position of the background transform
  */
 
 using System.Collections;

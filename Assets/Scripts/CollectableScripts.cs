@@ -1,3 +1,11 @@
+/*
+ Full Name: Rui Chen Geng Li (101277255)
+ File Name: CollectableScripts.cs
+ Last Modified: December 12th, 2021
+ Description: Collectable Loot's Behaviours. For gems, ammo chest and health potions
+ Version History: v1.04 Collision and SFX full implementation
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

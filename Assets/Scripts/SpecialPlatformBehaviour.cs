@@ -1,3 +1,11 @@
+/*
+ Full Name: Rui Chen Geng Li (101277255)
+ File Name: SpecialPlatformBehaviour.cs
+ Last Modified: December 12th, 2021
+ Description: Falling, Slippery, Exploding Blocks
+ Version History: v1.05 Full Implementation and SFX
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

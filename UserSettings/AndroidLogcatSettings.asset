@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "emulator-5554",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "emulator-5554",
+        "name": "com.RuiChenGengLi.GAME2014_A2_101277255",
+        "processId": 3202,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -43,6 +43,12 @@
             "name": "com.RuiChenGengLi.GAME2014_A2_101277255",
             "processId": 4312,
             "exited": true
+        },
+        {
+            "deviceId": "emulator-5554",
+            "name": "com.RuiChenGengLi.GAME2014_A2_101277255",
+            "processId": 3202,
+            "exited": false
         }
     ],
     "m_Tags": {

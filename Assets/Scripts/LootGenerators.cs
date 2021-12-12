@@ -1,3 +1,11 @@
+/*
+ Full Name: Rui Chen Geng Li (101277255)
+ File Name: LootGenerators.cs
+ Last Modified: December 12th, 2021
+ Description: Random Loot Generator Based On Given Spawn Positions
+ Version History: v1.03 Random Functionality Implemented and Internal Documentation
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

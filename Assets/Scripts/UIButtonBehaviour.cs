@@ -1,3 +1,11 @@
+/*
+ Full Name: Rui Chen Geng Li (101277255)
+ File Name: UIButtonBehaviour.cs
+ Last Modified: December 12th, 2021
+ Description: Detects when an onscreen button is pressed for the player to trigger jump/weapon change/attack actions.
+ Version History: v1.03 Full Functionality and Internal Documentation
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

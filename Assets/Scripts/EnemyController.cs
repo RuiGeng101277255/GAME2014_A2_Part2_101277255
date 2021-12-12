@@ -1,3 +1,11 @@
+/*
+ Full Name: Rui Chen Geng Li (101277255)
+ File Name: EnemyController.cs
+ Last Modified: December 12th, 2021
+ Description: Enemy's Behaviours based on Professor Tom's lab.
+ Version History: v1.03 Minor Modification and Internal Documentations
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,8 +30,6 @@ public class EnemyController : MonoBehaviour
     public Transform bulletSpawn;
     public float fireDelay;
     public GameObject player;
-    //public GameObject bulletPrefab;
-    //public AudioSource spitSound;
 
     private Rigidbody2D rigidbody;
 
@@ -38,7 +44,6 @@ public class EnemyController : MonoBehaviour
         enemyLOS = GetComponent<LOS>();
         animatorController = GetComponent<Animator>();
         player = GameObject.FindObjectOfType<PlayerScript>().gameObject;
-        //spitSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -56,7 +61,6 @@ public class EnemyController : MonoBehaviour
         else
         {
             animatorController.enabled = false;
-            //FireBullet();
         }
         
     }
@@ -65,13 +69,11 @@ public class EnemyController : MonoBehaviour
     {
         if (enemyLOS.colliderList.Count > 0)
         {
-            // Case 1 enemy polygonCollider2D collides with player and player is at the top of the list
             if ((enemyLOS.collidesWith.gameObject.CompareTag("Player")) &&
                 (enemyLOS.colliderList[0].gameObject.CompareTag("Player")))
             {
                 return true;
             }
-            // Case 2 player is in the Collider List and we can draw ray to the player
             else
             {
                 foreach (var collider in enemyLOS.colliderList)
@@ -131,18 +133,6 @@ public class EnemyController : MonoBehaviour
     {
         transform.localScale = new Vector3(transform.localScale.x * -1.0f, transform.localScale.y, transform.localScale.z);
     }
-
-    //private void FireBullet()
-    //{
-    //    // delay bullet firing
-    //    if (Time.frameCount % fireDelay == 0)
-    //    {
-    //        var temp_bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
-    //        temp_bullet.GetComponent<BulletController>().direction = Vector3.Normalize(player.transform.position - bulletSpawn.position);
-    //        spitSound.Play();
-    //    }
-    //}
-
 
     // EVENTS
 

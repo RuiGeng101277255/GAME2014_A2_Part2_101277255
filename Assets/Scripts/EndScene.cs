@@ -1,3 +1,11 @@
+/*
+ Full Name: Rui Chen Geng Li (101277255)
+ File Name: EndScene.cs
+ Last Modified: December 12th, 2021
+ Description: EndScene's UI Behaviour
+ Version History: v1.03 Loads data from the static class and display them on the screen. Also added internal documentation
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

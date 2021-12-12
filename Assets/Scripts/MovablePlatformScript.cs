@@ -1,3 +1,11 @@
+/*
+ Full Name: Rui Chen Geng Li (101277255)
+ File Name: MovablePlatformScript.cs
+ Last Modified: December 12th, 2021
+ Description: Moving Platform's Behaviours based on Professor Tom's lab.
+ Version History: v1.03 Public enum class moved within this script, minor Modification and Internal Documentations
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

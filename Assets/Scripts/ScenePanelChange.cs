@@ -1,9 +1,9 @@
 /*
  Full Name: Rui Chen Geng Li (101277255)
  File Name: ScenePanelChange.cs
- Last Modified: November 21st, 2021
+ Last Modified: December 12th, 2021
  Description: Changes from start to instruction, gameplay, and end panels
- Version History: v1.02 - Loads scene
+ Version History: v1.03 - Made into a singleton
  */
 
 using System.Collections;

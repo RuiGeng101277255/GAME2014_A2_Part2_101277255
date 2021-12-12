@@ -1,3 +1,11 @@
+/*
+ Full Name: Rui Chen Geng Li (101277255)
+ File Name: GameOverResult.cs
+ Last Modified: December 12th, 2021
+ Description: Singleton used for transfering the player's game state and score from play scene to end scene
+ Version History: v1.02 Full functionality and internal documentation
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
