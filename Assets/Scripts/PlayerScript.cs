@@ -37,10 +37,11 @@ public class PlayerScript : MonoBehaviour
 
     [Header("Attack Animation")]
     public GameObject SwordObject;
+    public GameObject SwordWeaponObject;
     public GameObject RifleObject;
     public bool isSword;
     bool hasJustChangedWeapon = false;
-    bool hasJustAttacked = false;
+    public bool hasJustAttacked = false;
 
     [Header("SFX")]
     public AudioSource jumpSFX;
@@ -168,7 +169,9 @@ public class PlayerScript : MonoBehaviour
                 if(isSword)
                 {
                     Debug.Log("Attack");
-                    //SwordObject.SetActive(true);
+                    SwordObject.SetActive(true);
+                    SwordObject.GetComponent<Animator>().SetTrigger("swing");
+                    SwordWeaponObject.GetComponent<Animator>().SetTrigger("swing");
                     //playerAnim.SetTrigger("SwordAttack");
                     playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.SWORD);
                 }
@@ -183,23 +186,28 @@ public class PlayerScript : MonoBehaviour
 
         if (hasJustAttacked)
         {
-            if (isSword)
+            if (!UIButtonBehaviour.ShootButtonDown)
             {
-                if (playerAnim.GetCurrentAnimatorStateInfo(3).normalizedTime > 1.0f)
-                {
-                    //playerAnim.SetInteger("Action", (int)PlayerAttackAction.NONE);
-                    //playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.NONE);
-                    SwordObject.SetActive(false);
-                    hasJustAttacked = false;
-                }
+                hasJustAttacked = false;
             }
-            else
-            {
-                if (!UIButtonBehaviour.ShootButtonDown)
-                {
-                    hasJustAttacked = false;
-                }
-            }
+            //if (isSword)
+            //{
+            //    if ((playerAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1.0f) && (playerAnim.GetCurrentAnimatorStateInfo(0).IsName("sword_side")))
+            //    {
+            //        Debug.Log("ljadfljkfdsf");
+            //        //playerAnim.SetInteger("Action", (int)PlayerAttackAction.NONE);
+            //        //playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.NONE);
+            //        //SwordObject.SetActive(false);
+            //        hasJustAttacked = false;
+            //    }
+            //}
+            //else
+            //{
+            //    if (!UIButtonBehaviour.ShootButtonDown)
+            //    {
+            //        hasJustAttacked = false;
+            //    }
+            //}
         }
 
         //else
