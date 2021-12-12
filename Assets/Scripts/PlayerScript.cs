@@ -35,6 +35,13 @@ public class PlayerScript : MonoBehaviour
     public float groundRadius;
     public LayerMask groundLayerMask;
 
+    [Header("Attack Animation")]
+    public GameObject SwordObject;
+    public GameObject RifleObject;
+    public bool isSword;
+    bool hasJustChangedWeapon = false;
+    bool hasJustAttacked = false;
+
     [Header("SFX")]
     public AudioSource jumpSFX;
 
@@ -51,11 +58,26 @@ public class PlayerScript : MonoBehaviour
     {
         Move();
         CheckIfGrounded();
+        checkChangeWeapon();
+        Attack();
     }
 
     private void Move()
     {
         float x = (Input.GetAxisRaw("Horizontal") + joystick.Horizontal) * sensitivity;
+
+        playerSprite.flipX = (x >= 0) ? true : false;
+
+        int scale = (x >= 0) ? 1 : -1;
+
+        if (isSword)
+        {
+            SwordObject.transform.localScale = new Vector3(scale, 1, 1);
+        }
+        else
+        {
+            RifleObject.transform.localScale = new Vector3(scale, 1, 1);
+        }
 
         if (grounded)
         {
@@ -74,7 +96,6 @@ public class PlayerScript : MonoBehaviour
 
             if (x != 0)
             {
-                playerSprite.flipX = (x > 0) ? true : false;
                 playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.RUN);
                 //x = FlipAnimation(x);
                 //animatorController.SetInteger("AnimationState", (int)PlayerAnimationState.RUN); // RUN State
@@ -101,7 +122,6 @@ public class PlayerScript : MonoBehaviour
         {
             //animatorController.SetInteger("AnimationState", (int)PlayerAnimationState.JUMP); // JUMP State
             //state = PlayerAnimationState.JUMP;
-            playerSprite.flipX = (x > 0) ? true : false;
 
             playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.JUMP);
 
@@ -117,12 +137,91 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-
     private void CheckIfGrounded()
     {
         RaycastHit2D hit = Physics2D.CircleCast(groundLevel.position, groundRadius, Vector2.down, groundRadius, groundLayerMask);
 
         grounded = (hit) ? true : false;
+    }
+
+    private void Attack()
+    {
+
+
+        if ((UIButtonBehaviour.ShootButtonDown) || (Input.GetKeyDown(KeyCode.J)))
+        {
+            //Debug.Log(playerAnim.GetCurrentAnimatorStateInfo(0).IsName("Movement"));
+
+            if (!hasJustAttacked)
+            {
+                if(isSword)
+                {
+                    Debug.Log("Attack");
+                    //SwordObject.SetActive(true);
+                    //playerAnim.SetTrigger("SwordAttack");
+                    playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.SWORD);
+                }
+                else
+                {
+
+                }
+
+                hasJustAttacked = true;
+            }
+        }
+
+        if (hasJustAttacked)
+        {
+            if (isSword)
+            {
+                if (playerAnim.GetCurrentAnimatorStateInfo(3).normalizedTime > 1.0f)
+                {
+                    //playerAnim.SetInteger("Action", (int)PlayerAttackAction.NONE);
+                    //playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.NONE);
+                    SwordObject.SetActive(false);
+                    hasJustAttacked = false;
+                }
+            }
+        }
+
+        //else
+        //{
+        //    playerAnim.SetInteger("Action", (int)PlayerAttackAction.NONE);
+        //    SwordObject.SetActive(false);
+        //    hasJustAttacked = false;
+        //}
+    }
+
+    private void checkChangeWeapon()
+    {
+        if (UIButtonBehaviour.ChangeWeaponDown)
+        {
+            if (!hasJustChangedWeapon)
+            {
+                Debug.Log("weapon changed");
+                isSword = (isSword) ? false : true;
+                checkWeaponDisplay();
+                hasJustChangedWeapon = true;
+            }
+        }
+        else
+        {
+            hasJustChangedWeapon = false;
+        }
+    }
+
+    private void checkWeaponDisplay()
+    {
+        if (isSword)
+        {
+            SwordObject.SetActive(true);
+            RifleObject.SetActive(false);
+        }
+        else
+        {
+            RifleObject.SetActive(true);
+            SwordObject.SetActive(false);
+        }
     }
 
     private void OnDrawGizmos()
@@ -136,5 +235,6 @@ public enum PlayerMovementAnimation
 {
     IDLE,
     RUN,
-    JUMP
+    JUMP,
+    SWORD
 }

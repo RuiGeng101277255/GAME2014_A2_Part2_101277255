@@ -15,13 +15,32 @@ public class GameManagerScript : MonoBehaviour
     [Header("Player Lives")]
     public GameObject[] Lives;
 
+    [Header("Icon Display")]
+    public GameObject SwordIcon;
+    public GameObject AmmoIcon;
+
     public PlayerScript Player;
 
     // Update is called once per frame
     void Update()
     {
+        updateIcon();
         updateText();
         updatePlayerLives();
+    }
+
+    void updateIcon()
+    {
+        if (Player.isSword)
+        {
+            SwordIcon.SetActive(true);
+            AmmoIcon.SetActive(false);
+        }
+        else
+        {
+            SwordIcon.SetActive(false);
+            AmmoIcon.SetActive(true);
+        }
     }
 
     void updateText()
