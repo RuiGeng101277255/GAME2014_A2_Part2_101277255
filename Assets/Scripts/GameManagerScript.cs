@@ -58,7 +58,10 @@ public class GameManagerScript : MonoBehaviour
 
     void updateText()
     {
-        TotalTimeLeft -= Time.deltaTime;
+        if (Player.isMoving)
+        {
+            TotalTimeLeft -= Time.deltaTime;
+        }
         timerText.text = "Time Left: " + (int)TotalTimeLeft + "s";
         scoreText.text = "Score: " + Player.PlayerScore;
         ammoText.text = "x " + Player.AmmmoCount;

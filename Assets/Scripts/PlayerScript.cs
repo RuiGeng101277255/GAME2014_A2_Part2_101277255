@@ -35,6 +35,8 @@ public class PlayerScript : MonoBehaviour
     public float groundRadius;
     public LayerMask groundLayerMask;
 
+    public bool isMoving;
+
     [Header("Attack Animation")]
     public GameObject SwordObject;
     public GameObject SwordWeaponObject;
@@ -110,6 +112,7 @@ public class PlayerScript : MonoBehaviour
             if (x != 0)
             {
                 playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.RUN);
+                isMoving = true;
                 //x = FlipAnimation(x);
                 //animatorController.SetInteger("AnimationState", (int)PlayerAnimationState.RUN); // RUN State
                 //state = PlayerAnimationState.RUN;
@@ -118,6 +121,7 @@ public class PlayerScript : MonoBehaviour
             else
             {
                 playerAnim.SetInteger("Movement", (int)PlayerMovementAnimation.IDLE);
+                isMoving = false;
                 //animatorController.SetInteger("AnimationState", (int)PlayerAnimationState.IDLE); // IDLE State
                 //state = PlayerAnimationState.IDLE;
             }
@@ -145,6 +149,7 @@ public class PlayerScript : MonoBehaviour
                 float horizontalMoveForce = x * horizontalForce * airControlFactor;
                 float mass = playerRB.mass * playerRB.gravityScale;
                 //
+                isMoving = true;
                 playerRB.AddForce(new Vector2(horizontalMoveForce, 0.0f) * mass);
             }
         }
